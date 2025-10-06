@@ -60,12 +60,43 @@ Firebase for Cloud Functions/Firestore/Storage (managed backend)
 **Progress Updates:** Weekly GitHub issues using update template
 
 ## Timeline & Milestones
-**Week 1-2:** Project setup, initial planning
-**Week 3-4:** Core architecture, basic setup
-**Week 5-8:** Feature development sprint 1
-**Week 9-12:** Feature development sprint 2
-**Week 13-14:** Testing, polish, deployment
-**Week 15-16:** Demo preparation, documentation
+**+ Week 1-2:** Project setup, initial planning
+**+ Week 3-4:** Core architecture, basic setup: 
+
+React + TS + Tailwind, React Router.
+
+Firebase project, Auth (Email link/OTP), @mavs.uta.edu enforcement.
+
+Firestore set up + seed cat profiles (mock photos).
+**+ Week 5-8:** Feature development sprint 1: Map & Profiles (UI)
+
+Integrate Google Maps JS API; campus map baseline.
+
+Read /cats in real time, show markers.
+
+Marker click → popup with mini card; route to /cats/:id with full profile.
+
+**+ Week 9-12:** Feature development sprint 2: Tracker Ingestion (Backend)
+
+Build Cloud Function webhook + schema validation + HMAC/shared secret.
+
+Add /trackerBindings collection (link trackerId → catId).
+
+Upsert lastKnownLocation and append to /locationEvents.
+**+ Week 13-14:** Testing, polish, deployment: DND, Security, Polish
+
+Implement DND: hide locations for a certain time.
+
+Security rules hardened (read: mavs only; write: admins).
+
+Admin mini-UI: assign tracker → cat, edit DND and profile fields.
+**+ Week 15-16:** Demo preparation, documentation: 
+
+Deploy frontend to Vercel, backend on Firebase.
+
+Add loading/error states, empty states, basic unit/integration tests.
+
+Final pass on performance, quotas, and docs (README + setup guide)
 
 ## Team Roles
 - **Ghiya El Daouk:** Project Manager
