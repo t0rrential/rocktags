@@ -4,6 +4,7 @@
 **Project Manager:** Ghiya El Daouk (@ghiyascode)
 **Team Size:** 6 members
 **Semester:** Fall 2025
+
 ## Project Vision
 **Problem Statement:** What problem does this solve?
 
