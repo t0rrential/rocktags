@@ -68,6 +68,7 @@ React + TS + Tailwind, React Router.
 Firebase project, Auth (Email link/OTP), @mavs.uta.edu enforcement.
 
 Firestore set up + seed cat profiles (mock photos).
+
 **+ Week 5-8:** Feature development sprint 1: Map & Profiles (UI)
 
 Integrate Google Maps JS API; campus map baseline.
@@ -83,6 +84,7 @@ Build Cloud Function webhook + schema validation + HMAC/shared secret.
 Add /trackerBindings collection (link trackerId → catId).
 
 Upsert lastKnownLocation and append to /locationEvents.
+
 **+ Week 13-14:** Testing, polish, deployment: DND, Security, Polish
 
 Implement DND: hide locations for a certain time.
@@ -90,6 +92,7 @@ Implement DND: hide locations for a certain time.
 Security rules hardened (read: mavs only; write: admins).
 
 Admin mini-UI: assign tracker → cat, edit DND and profile fields.
+
 **+ Week 15-16:** Demo preparation, documentation: 
 
 Deploy frontend to Vercel, backend on Firebase.
