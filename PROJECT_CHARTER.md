@@ -2,7 +2,9 @@
 
 ## Team Information
 **Project Manager:** Ghiya El Daouk (@ghiyascode)
+
 **Team Size:** 6 members
+
 **Semester:** Fall 2025
 
 ## Project Vision
@@ -26,7 +28,9 @@
 
 ## Communication Plan
 **Primary Channel:** Discord #rocktags
+
 **Meeting Schedule:** Weekly, Wednesday at 4:00pm
+
 **Progress Updates:** Weekly GitHub issues using update template
 
 ## Timeline & Milestones
