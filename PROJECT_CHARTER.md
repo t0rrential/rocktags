@@ -106,6 +106,8 @@ Final pass on performance, quotas, and docs (README + setup guide)
 - **Ghiya El Daouk:** Project Manager
 - **Andrew Truong:** member
 - **Bryan Nguyen:** member
+- **Samyog Maharjan:** member
+
 
 ## Risk Assessment
 **Technical Risks:** What could go wrong technically?
