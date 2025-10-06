@@ -107,6 +107,7 @@ Final pass on performance, quotas, and docs (README + setup guide)
 - **{{MEMBER_2}}:** {{role}} (e.g., Frontend Lead, Backend Lead, UI/UX, DevOps)
 - **{{MEMBER_3}}:** {{role}}
 - **{{MEMBER_4}}:** {{role}}
+- **Ariel Zambeck** Backend
 - **{{MEMBER_5}}:** {{role}}
 
 ## Risk Assessment
