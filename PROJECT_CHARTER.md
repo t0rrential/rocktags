@@ -61,6 +61,7 @@ Firebase for Cloud Functions/Firestore/Storage (managed backend)
 
 ## Timeline & Milestones
 **+ Week 1-2:** Project setup, initial planning
+
 **+ Week 3-4:** Core architecture, basic setup: 
 
 React + TS + Tailwind, React Router.
