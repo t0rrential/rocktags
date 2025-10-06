@@ -8,23 +8,45 @@
 **Semester:** Fall 2025
 
 ## Project Vision
-**Problem Statement:** What problem does this solve?
+**Problem Statement:** Campus cats currently roam free with no way for students to realistically find them. Our Campus Cat Tracker Web Application will solve that - a private, university-only platform that displays the real-time locations of campus cats on a Google Map, alongside detailed cat profiles.
 
 **Target Users:** UTA students, staff, etc.
 
-**Success Metrics:** How will you measure success?
+**Success Metrics:**
+1. UTA students can securely log in with @mavs.uta.edu credentials.
+
+2. The web app displays accurate, real-time cat locations on a campus map.
+
+3. Each cat’s profile is viewable and correctly linked to its location marker.
+
+4. DND privacy logic and authentication reliably protect data access.
 
 ## Technical Architecture
 **Tech Stack:**
 - Frontend:
+React + Vite, TypeScript, Tailwind CSS
+
+Google Maps JavaScript API via @react-google-maps/api
+
+Routing with React Router
+
 - Backend:
+Firebase Cloud Functions (HTTPS endpoint for tracker webhooks + server logic)
+
 - Database:
-- Deployment: (Recommended: Vercel, Render, or similar for easy deployment)
+Cloud Firestore (realtime reads for map & profiles)
+
+Firebase Storage (cat photos)
+
+- Deployment:
+Vercel for the frontend (fast CI/CD)
+
+Firebase for Cloud Functions/Firestore/Storage (managed backend)
 
 **Key Features (MVP):**
-1.
-2.
-3.
+1. Cat Profiles: Photo, name, bio, feeding prefs, dietary restrictions, where OK to give rubs/where not, DND schedule, (stretch: last seen time/location)
+2. Map + Real-Time Locations: Google Map centered on campus; markers for each cat; click = cat profile popup 
+3. Auth & Privacy: Email OTP restricted to @mavs.uta.edu. Enforce DND (hide location during set hours).
 
 ## Communication Plan
 **Primary Channel:** Discord #rocktags
