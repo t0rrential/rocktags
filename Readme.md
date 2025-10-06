@@ -2,14 +2,14 @@
 
 Working draft for maintainers & contributors while the project is under active development. Coordinate in ACM Discord/Slack (project channel or #projects).
 
-Directors / Contacts: Tobi (Director) and Prajit Viswanadha — DM on Discord
+Directors / Contacts: Tobi and Prajit Viswanadha — DM on Discord
 
 ---
 
 ## Status & Links
 - Phase: In Development
 - Project board: {{PROJECT_BOARD_URL}}
-- Communication: Discord #{{project-channel}} (or team preference for Slack, etc.)
+- Communication: Discord #rocktags
 - Open issues: use repo Issues; prefer labels `good first issue` and `help wanted` thoughtfully
 
 ---
