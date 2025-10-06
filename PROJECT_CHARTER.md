@@ -108,6 +108,7 @@ Final pass on performance, quotas, and docs (README + setup guide)
 - **Bryan Nguyen:** member
 - **Samyog Maharjan:** member
 - **Subam Sharma Luitel:** member
+- **Alvin Nguyen:** member
 
 
 
