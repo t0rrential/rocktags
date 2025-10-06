@@ -105,7 +105,7 @@ Final pass on performance, quotas, and docs (README + setup guide)
 ## Team Roles
 - **Ghiya El Daouk:** Project Manager
 - **{{MEMBER_2}}:** {{role}} (e.g., Frontend Lead, Backend Lead, UI/UX, DevOps)
-- **{{MEMBER_3}}:** {{role}}
+- **{{Bryan Nguyen}}:** {{role}}
 - **{{MEMBER_4}}:** {{role}}
 - **{{MEMBER_5}}:** {{role}}
 
