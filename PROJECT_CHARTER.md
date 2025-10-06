@@ -107,6 +107,8 @@ Final pass on performance, quotas, and docs (README + setup guide)
 - **Andrew Truong:** member
 - **Bryan Nguyen:** member
 - **Samyog Maharjan:** member
+- **Subam Sharma Luitel:** member
+
 
 
 ## Risk Assessment
