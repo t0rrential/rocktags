@@ -24,6 +24,7 @@
 ## Technical Architecture
 **Tech Stack:**
 - Frontend:
+  
 React + Vite, TypeScript, Tailwind CSS
 
 Google Maps JavaScript API via @react-google-maps/api
@@ -31,14 +32,17 @@ Google Maps JavaScript API via @react-google-maps/api
 Routing with React Router
 
 - Backend:
+  
 Firebase Cloud Functions (HTTPS endpoint for tracker webhooks + server logic)
 
 - Database:
+  
 Cloud Firestore (realtime reads for map & profiles)
 
 Firebase Storage (cat photos)
 
 - Deployment:
+  
 Vercel for the frontend (fast CI/CD)
 
 Firebase for Cloud Functions/Firestore/Storage (managed backend)
