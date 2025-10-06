@@ -1,14 +1,13 @@
 # {{PROJECT_NAME}} - Project Charter
 
 ## Team Information
-**Project Manager:** {{PM_NAME}} (@{{PM_GITHUB}})
-**Team Size:** {{TEAM_SIZE}} members
-**Semester:** {{SEMESTER}} {{YEAR}}
-
+**Project Manager:** Ghiya El Daouk (@ghiyascode)
+**Team Size:** 6 members
+**Semester:** Fall 2025
 ## Project Vision
 **Problem Statement:** What problem does this solve?
 
-**Target Users:** Who will use this?
+**Target Users:** UTA students, staff, etc.
 
 **Success Metrics:** How will you measure success?
 
@@ -25,8 +24,8 @@
 3.
 
 ## Communication Plan
-**Primary Channel:** Discord #{{project-channel}} (or team preference)
-**Meeting Schedule:** Weekly {{day}} at {{time}}
+**Primary Channel:** Discord #rocktags
+**Meeting Schedule:** Weekly, Wednesday at 4:00pm
 **Progress Updates:** Weekly GitHub issues using update template
 
 ## Timeline & Milestones
@@ -38,7 +37,7 @@
 **Week 15-16:** Demo preparation, documentation
 
 ## Team Roles
-- **{{PM_NAME}}:** Project Manager, {{additional_responsibilities}}
+- **Ghiya El Daouk:** Project Manager
 - **{{MEMBER_2}}:** {{role}} (e.g., Frontend Lead, Backend Lead, UI/UX, DevOps)
 - **{{MEMBER_3}}:** {{role}}
 - **{{MEMBER_4}}:** {{role}}
