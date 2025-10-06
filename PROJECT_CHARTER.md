@@ -104,10 +104,8 @@ Final pass on performance, quotas, and docs (README + setup guide)
 
 ## Team Roles
 - **Ghiya El Daouk:** Project Manager
-- **{{MEMBER_2}}:** {{role}} (e.g., Frontend Lead, Backend Lead, UI/UX, DevOps)
-- **{{Bryan Nguyen}}:** {{role}}
-- **{{MEMBER_4}}:** {{role}}
-- **{{MEMBER_5}}:** {{role}}
+- **Andrew Truong:** member
+- **Bryan Nguyen:** member
 
 ## Risk Assessment
 **Technical Risks:** What could go wrong technically?
