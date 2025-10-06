@@ -104,12 +104,12 @@ Final pass on performance, quotas, and docs (README + setup guide)
 
 ## Team Roles
 - **Ghiya El Daouk:** Project Manager
+- **Ariel Zambeck:** member
 - **Andrew Truong:** member
 - **Bryan Nguyen:** member
 - **Samyog Maharjan:** member
 - **Subam Sharma Luitel:** member
 - **Alvin Nguyen:** member
-
 
 
 ## Risk Assessment
