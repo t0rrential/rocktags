@@ -107,7 +107,9 @@ export default function Home() {
             <div className={`text-center text-sm ${
               message.includes("successfully") ? "text-green-600" : "text-red-600"
             }`}>
-              {message}
+              {message.includes("Only @mavs.uta.edu emails are allowed") 
+                ? "Please use a @mavs.uta.edu email." 
+                : "Error."}
             </div>
           )}
 
