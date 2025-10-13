@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { auth } from "../config/firebase";
 
 export default function Home() {
@@ -28,8 +28,8 @@ export default function Home() {
     setMessage("");
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      setMessage("Account created successfully!");
+      await createUserWithEmailAndPassword(auth, email, password).then((cred) => sendEmailVerification(cred.user));;
+      setMessage("Account created successfully! Check your email for verification.");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
@@ -109,7 +109,7 @@ export default function Home() {
             }`}>
               {message.includes("Only @mavs.uta.edu emails are allowed") 
                 ? "Please use a @mavs.uta.edu email." 
-                : "Error."}
+                : message}
             </div>
           )}
 
