@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ButtonGroup } from "@/components/ui/button-group"
 import { ArrowRight } from "lucide-react"
+import {Slottable} from "@radix-ui/react-slot"
 import Link from "next/link"
 
 export function HeroSection() {
@@ -54,8 +55,8 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium group">
-                Explore the Map
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Link href="/main/map">Explore the Map</Link>
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 size="lg"

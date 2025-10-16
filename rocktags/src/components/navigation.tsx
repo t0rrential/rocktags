@@ -21,7 +21,7 @@ export function Navigation() {
           {/* Navigation Links */}
           <div className="md:flex items-center gap-8">
             <Link
-              href="/map"
+              href="/main/map"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Map
@@ -33,13 +33,7 @@ export function Navigation() {
               About
             </Link>
             <Link
-              href="/team"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Meet the Team
-            </Link>
-            <Link
-              href="/acm"
+              href="https://www.acmuta.com/"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               ACM
