@@ -9,6 +9,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex group">
             <Image
+              unoptimized={true}
               src="/finale.gif"
               alt="ACM Logo"
               width={288}
