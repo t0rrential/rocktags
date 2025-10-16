@@ -27,14 +27,11 @@ export function HeroSection() {
           <div className="flex flex-col items-start justify-center space-y-8">
             <div className="inline-flex flex-col gap-4">
               <ButtonGroup className="bg-background/40 backdrop-blur-xl border border-border/50 shadow-2xl p-1.5">
-                <Button
-                  size="lg"
-                  className="bg-primary/90 hover:bg-primary text-primary-foreground font-medium px-8 shadow-lg"
-                >
-                  Sign In
+                <Button asChild size="lg" className="bg-primary/90 hover:bg-primary text-primary-foreground font-medium px-8 shadow-lg">
+                  <Link href="/login">Sign In</Link>
                 </Button>
                 <Button asChild size="lg" variant="ghost" className="text-foreground hover:bg-accent/50 font-medium px-8">
-                  <Link href="/sign-up">Sign Up</Link>
+                  <Link href="/login">Sign Up</Link>
                 </Button>
               </ButtonGroup>
 
