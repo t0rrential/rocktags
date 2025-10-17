@@ -35,7 +35,7 @@ export function SignInForm() {
         // Navigate to main area after successful signin
         setTimeout(() => {
           router.push("/main/map");
-        }, 1000);
+        }, 100);
       }
 
     } catch (error: unknown) {

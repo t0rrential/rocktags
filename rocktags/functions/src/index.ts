@@ -4,12 +4,13 @@
 
 import { beforeUserCreated, HttpsError } from "firebase-functions/v2/identity";
 import * as functions from 'firebase-functions/v1';
-import * as admin from 'firebase-admin';
+import {getFirestore} from 'firebase-admin/firestore';
+import { initializeApp } from "firebase-admin/app";
+import 'firebase-functions/logger/compat';
 
 // Initialize Admin SDK and Firestore
-admin.initializeApp();
-const db = admin.firestore();
-require("firebase-functions/logger/compat");
+const firebaseApp = initializeApp();
+export const db = getFirestore(firebaseApp, 'mainstore');
 
 export const enforceMavsEmail = beforeUserCreated(async (event) => {
   const user = event.data;
@@ -27,22 +28,18 @@ export const createFirestoreUser = functions.auth.user().onCreate(async (user) =
     
     // Data to write to Firestore
     const userData = {
-        email: email,
         displayName: displayName || 'New User',
         role: 'user',
     };
 
     // Use the Auth UID as the document ID for the user profile
-    const userRef = db.collection('users').doc(uid);
+    await db.collection('users').doc(email!).set(userData)
+    .then(() => {
+        console.log("[V1]Document successfully written!");
+    })
+    .catch((error) => {
+        console.error("[V1] Error writing document: ", error);
+    });
 
     console.log(`[V1] Creating user profile for UID: ${uid}`);
-
-    try {
-        await userRef.set(userData, { merge: true });
-        console.log(`[V1] Successfully created user profile document for ${uid}`);
-    } catch (error) {
-        console.error(`[V1] Error creating user profile document for ${uid}:`, error);
-        // Do NOT throw an HttpsError here, as it can't stop the Auth process.
-        // Log the failure to debug later.
-    }
 });

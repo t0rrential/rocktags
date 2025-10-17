@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cd rocktags && next dev --turbopack",
-    "build": "cd rocktags && next build --turbopack", 
+    "build": "cd rocktags && next build --turbopack",
     "start": "cd rocktags && next start",
     "lint": "cd rocktags && eslint",
     "functions:build": "cd rocktags/functions && tsc",
@@ -26,6 +26,7 @@
     "firebase": "^12.4.0",
     "firebase-admin": "^12.7.0",
     "firebase-functions": "^6.0.1",
+    "firebase-tools": "^14.20.0",
     "lucide-react": "^0.545.0",
     "next": "15.5.4",
     "react": "19.1.0",
