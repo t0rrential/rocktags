@@ -8,6 +8,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import type { Cat, Building, LatLng, MapOptionsShape } from "./types";
+import type { LoadScriptProps } from "@react-google-maps/api";
 
 
 // Custom map style with UTA colors
@@ -71,11 +72,10 @@ const buildingIcon = {
   scaledSize: { width: 40, height: 40 },
 };
 
-const libraries = ["places"];
+const libraries: LoadScriptProps['libraries'] = ["places"];
 
 import React from "react";
 import ProfileCard from "@/components/ProfileCard";
-
 
 export default function Home(): React.ReactElement {
   const [activeCatIndex, setActiveCatIndex] = useState<number | null>(null);
@@ -549,10 +549,8 @@ export default function Home(): React.ReactElement {
         <div className="bg-white rounded-3xl shadow-2xl p-6 border-4 border-white">
           <div className="relative h-[70vh] rounded-2xl overflow-hidden shadow-inner">
             <LoadScript
-              googleMapsApiKey={
-                (globalThis as any).NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-              }
-              libraries={libraries as any}
+              googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
+              libraries={libraries}
             >
               <GoogleMap
                 mapContainerStyle={mapContainerStyle}
