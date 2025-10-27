@@ -1,16 +1,16 @@
-import { admin_db } from "@/config/firebase-admin";
+import { db } from "@/config/firebase"; 
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 
 interface User {
   id: string,
   displayName: string,
-  role: string
+  role: string //remove to use custom claims
 };
 
 export async function getAllUsers() {
+  const userCollectionRef = collection(db, 'users');
 
-  const userCollectionRef = admin_db.collection('users');
-
-  const snapshot = await userCollectionRef.get();
+  const snapshot = await getDocs(userCollectionRef);
   const usersArr : User[] = snapshot.docs.map(doc => {
     return {
       id: doc.id, 
@@ -27,11 +27,11 @@ export async function getAllUsers() {
 }
 
 export async function getUser(userId : string) : Promise<User | null> {
-  const userCollectionRef = admin_db.collection('users').doc(`${userId}`);
+  const userDocRef = doc(db, 'users', userId);
 
-  const docSnapshot = await userCollectionRef.get();
+  const docSnapshot = await getDoc(userDocRef)
 
-  if (docSnapshot.exists) {
+  if (docSnapshot.exists()) {
     const data = docSnapshot.data();
     
     return {
