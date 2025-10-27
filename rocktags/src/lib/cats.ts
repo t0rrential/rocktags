@@ -1,6 +1,6 @@
 import { db } from "@/config/firebase"; 
 import { GeoPoint } from "firebase/firestore";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, setDoc, deleteDoc } from "firebase/firestore";
 
 interface Cat {
   id: string,
@@ -46,5 +46,27 @@ export async function getCat(catId : string) : Promise<Cat | null> {
     } as Cat;
   } else {
     return null;
+  }
+}
+
+export async function createOrUpdateCat(newCat : Cat) {
+  try {
+    const catDocRef = doc(db, 'cats', newCat.id);
+    await setDoc(catDocRef, newCat);
+
+    console.log(`Successfully added/updated cat ${newCat.id}`);
+  } catch (err) {
+    console.error(`Could not add/update cat ${newCat.id}. `, err);
+  }
+}
+
+export async function deleteCat(catId : string) {
+  try {
+    const catDocRef = doc(db, 'cats', catId);
+    await deleteDoc(catDocRef);
+
+    console.log(`Successfully deleted cat ${catId}`);
+  } catch (err) {
+    console.error(`Could not delete cat ${catId}. `, err);
   }
 }

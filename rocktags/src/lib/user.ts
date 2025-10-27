@@ -48,6 +48,7 @@ export async function getUser(userId : string) : Promise<User | null> {
     }
   } catch (err) {
     console.error(`Getting user ${userId} failed. `, err);
+    return null;
   }
 }
 
