@@ -1,5 +1,5 @@
 import admin from "firebase-admin";
-import serviceAccount from "../../serviceAccount.json"; 
+import serviceAccount from "../serviceAccount.json"; 
 
 // Define the type for the service account
 const serviceAccountParams = {

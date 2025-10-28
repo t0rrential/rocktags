@@ -1,7 +1,7 @@
 import { beforeUserCreated, HttpsError } from "firebase-functions/v2/identity";
 import * as functions from 'firebase-functions/v1';
 import 'firebase-functions/logger/compat';
-import { admin_auth, admin_db } from "@/config/firebase-admin";
+import { admin_auth, admin_db } from "./firebase-admin";
 
 export const enforceMavsEmail = beforeUserCreated(async (event) => {
   const user = event.data;
