@@ -1,5 +1,5 @@
 import admin from "firebase-admin";
-import serviceAccount from "../serviceAccount.json"; 
+import serviceAccount from "../../serviceAccount.json"; 
 
 // Define the type for the service account
 const serviceAccountParams = {
@@ -22,8 +22,26 @@ if (!admin.apps.length) {
   });
 }
 
-const admin_db = admin.firestore();
-const admin_auth = admin.auth();
+async function grantAdminToAllUsers() {
+  try {
+    const result = await admin.auth().listUsers(1000);
+    let count = 0;
+    for (const user of result.users) {
+      if (user.customClaims && user.customClaims.admin === true) {
+        console.log(`Skipping UID ${user.uid}: claim already set.`);
+      } else {
+        // Set the custom claim
+        await admin.auth().setCustomUserClaims(user.uid, { admin: true });
+        console.log(`Successfully set 'admin: true' for UID: ${user.uid}`);
+        ++count;
+      }
 
-export { admin_db, admin_auth};
-  
+    };
+
+    console.log('total admin set: ' + count);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+grantAdminToAllUsers();
