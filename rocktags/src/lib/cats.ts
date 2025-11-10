@@ -4,11 +4,14 @@ import { collection, getDocs, doc, getDoc, setDoc, deleteDoc } from "firebase/fi
 
 interface Cat {
   id: string,
+  about: string,
   coordinates: GeoPoint,
   dietary_restrictions: string[],
   fav_spot: string,
   feeding_time: string[],
   image_url: string,
+  recommended_snacks: string[],
+  tagline: string,
   where_not_to_rub: string[],
   where_to_rub: string[]
 };
@@ -24,12 +27,12 @@ export async function getAllCats() {
     } as Cat;
   });
 
-  const usersObj = catsArr.reduce<Record<string, Cat>>((acc, cat) => {
+  const catsObj = catsArr.reduce<Record<string, Cat>>((acc, cat) => {
     acc[cat.id] = cat;
     return acc;
   }, {});
 
-  return usersObj;
+  return catsObj;
 }
 
 export async function getCat(catId : string) : Promise<Cat | null> {
