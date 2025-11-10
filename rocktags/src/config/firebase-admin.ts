@@ -19,13 +19,11 @@ const serviceAccountParams = {
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccountParams),
-    databaseURL: process.env.FIREBASE_REALTIME_DATABASE_URL
   });
 }
 
 const admin_db = admin.firestore();
 const admin_auth = admin.auth();
-const admin_rtdb = admin.database();
 
-export { admin_db, admin_auth, admin_rtdb };
+export { admin_db, admin_auth};
   
