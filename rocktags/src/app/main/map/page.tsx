@@ -75,7 +75,7 @@ const buildingIcon = {
 const libraries: LoadScriptProps['libraries'] = ["places"];
 
 import React from "react";
-import ProfileCard from "@/app/components/ProfileCard";
+import ProfileCard from "@/components/ProfileCard";
 
 export default function Home(): React.ReactElement {
   const [activeCatIndex, setActiveCatIndex] = useState<number | null>(null);

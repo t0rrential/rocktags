@@ -1,48 +1,31 @@
-"use client";
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { admin_auth } from '@/config/firebase-admin';
 
-import { auth } from "@/config/firebase";
-
-import { redirect, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-
-export default function DashboardLayout({
-  children, // will be a page or nested layout
+export default async function DashboardLayout({
+  children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-
-  const router = useRouter();
-  const [isUserValid, setIsUserValid] = useState(false);
-
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        if (user.emailVerified) {
-          setIsUserValid(true);
-          console.log("This is the logged in user", user);
-        } else {
-          console.log("email not verified");
-          router.push("/login");
-        }
-      } else {
-        console.log("no user found");
-        router.push("/login");
-      }
-    });
-
-    // Clean up the listener when component unmounts
-    return () => unsubscribe();
-  }, [router]);
-
-  if (isUserValid) {
-    return (
-      <div>
-        {/* Include shared UI here e.g. a header or sidebar */}
-        {/* <NavBar /> */}
-        <div className="mt-20">{children}</div>
-      </div>
-    );
+  const cookieStore = await cookies()
+  const authToken = cookieStore.get('firebase-auth-token')?.value
+  
+  if (!authToken) {
+    redirect('/login')
   }
 
+  try {
+    // Verify token with Firebase Admin SDK
+    const decodedToken = await admin_auth.verifyIdToken(authToken)
+    // Token is valid, user is authenticated
+  } catch (error) {
+    // Token is invalid or expired, redirect to login
+    redirect('/login')
+  }
+  
+  return (
+    <div>
+      <div className="mt-20">{children}</div>
+    </div>
+  )
 }
